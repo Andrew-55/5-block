@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.block {
+   height: 700px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   overflow: hidden;
+}
+.block > div {
+    width: 700px;
+    background-color: #333;
+    position: relative;
+    left: -50%;
+    z-index: 1;
+}
+.block > div:nth-child(2) {
+    left: -100%;
+    width: 700px;
+    background-color: #FFFF;
+    clip-path: polygon(65% 0%, 100% 50%, 65% 100%, 0% 100%, 35% 50%, 0% 0%);
+    z-index: 2;
+    display: grid;
+    align-items: center;
+    padding: 0 60px;
+}
+.block > div:nth-child(3) {
+    width: 80vw;
+    left: -100%;
+    background: url(https://million-wallpapers.ru/wallpapers/1/56/10886988545293649101/vysokie-palmy-na-fone-morya.jpg) 100% 50% / cover;
+    transition: all 0,5s ease-in-out;
+    z-index: 0;
+}
+@media (max-width: 1120px){
+    .block > div:nth-child(3) {
+        left: -150%;
+    }
+}
+.line {
+    position:absolute;
+    top: 6%;
+    right: 35%;
+    height: 50%;
+    width: 2px;
+    background-color: #FFF;
+    transform: rotate(-36deg);
+}
+.margin {
+    margin-left: 100px;
+}
+.margin:first-child {
+    margin-top: 70px;
+}
+.margin *:not(.margin) {
+    margin-bottom: 70px;
+}
+.title {
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #333
+}
+.title span:last-child {
+    display: block;
+    margin-left: 30px;
+}
+.item {
+  max-width: 250px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 20px;
+  color: #333;
+}
+.item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 3px;
+    left: 0;
+    top: -20px;
+    height: 40px;
+    background-color: #999;
+
+}
