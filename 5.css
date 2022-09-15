@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+  display: grid;
+  justify-content: center;
+}
+body::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 40%;
+  width: 20px;
+  background-color: #444;
+}
+.content { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 100px 60px;
+  padding: 100px;
+  align-items: center;
+}
+.title {
+  grid-column: 1/3;
+  font-size: 44px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+.desc {
+  font-size: 14px;
+  max-width: 170px;
+}
+.item {
+  grid-row: 2;
+  display: grid;
+}
+.item_circle {
+  --size: 20vw;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  background-color: #333;
+  display: grid;
+  padding: 30px;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  color: #FFF;
+  text-align: center;
+}
+.item_text{
+  margin-top: 60px;
+  font-size: 13px;
+  display: flex;
+  max-width: 250px;
+}
+.item_text::before{
+  --size: 20px;
+  content: '';
+  display: inline-block;
+  min-width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  background-color: #444;
+}
+.item_title {
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: left;
+}
+.item_circle .item_label {
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.item_circle .label_text, .item_circle .numb_text{
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+.item_invert .item_circle, .item_invert .item_text::before {
+  background-color: #FFF;
+  outline: 2px solid #444;
+  color: #444;
+  outline-offset: -2px;
+}
+.numb {
+  font-size: 40px;
+  letter-spacing: 8px;
+
+}
