@@ -1,0 +1,88 @@
+:root {
+    --size: 200px;
+    --deg: 40deg;
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+  height: 100vw;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.block {
+  position: relative;
+}
+.avatar {
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--size);
+  background: url('https://cdn-icons-png.flaticon.com/512/3001/3001764.png') center / 100% auto no-repeat;
+  border: 5px solid #FFF;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.334);
+}
+.menu-item, .menu-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--size);
+  height: var(--size);
+  transform: rotate(0);
+  transition: all 0.2s ease-in;
+
+}
+.menu-btn {
+  transform: rotate(calc(var(--deg)*0,2));
+}
+.menu-btn div {
+    transform: rotate(calc(var(--deg)*-0,2));
+    cursor: pointer;
+  }
+.menu-item div, .menu-btn div {
+    --size-ic: calc(var(--size) / 3.5);
+    width: var(--size-ic);
+    height: var(--size-ic);
+    border-radius: var(--size-ic);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: #16aebf;
+    border: 2px solid #FFF;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.334);
+}
+.menu-item div {
+    --size-ic: calc(var(--size)/4.5);
+    border-radius: var(--size-ic);
+    right: 6%;
+    bottom: 6%;
+}
+.block.open .menu-btn div {
+    transform: rotate(calc(var(--deg)*1));
+}
+.block.open .menu-item {
+  transform: rotate(calc(var(--deg)*0.75*-1));
+}
+.block.open .menu-item:nth-child(2) {
+  transform: rotate(calc(var(--deg)*0.75*-2));
+}
+.block.open .menu-item:nth-child(3) {
+    transform: rotate(calc(var(--deg)*0.75*-3));
+}
+.block.open .menu-item div {
+    transform: rotate(calc(var(--deg)*0.75*1));
+}
+.block.open .menu-item:nth-child(2) div {
+    transform: rotate(calc(var(--deg)*0.75*2));
+}
+.block.open .menu-item:nth-child(3) div {
+    transform: rotate(calc(var(--deg)*0.75*3));
+}
+.material-symbols-outlined {
+    font-style: calc(var(--size-ic) / 1.7);
+    color: #FFF;
+}
