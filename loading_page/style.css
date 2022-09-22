@@ -7,6 +7,8 @@
     --black: #000;
     --primary: #3E86F5;
     --secondary: #7C7C7C
+
+    /*Icons*/
 }
 
 * {
@@ -18,12 +20,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--white);
 }
 /*Layout*/
 .wrapper {
     min-height: 100vh;
-    background-color: #ccc;
+    background-color: var(--secondary);
 }
 .container {
     margin: auto;
@@ -39,6 +40,7 @@ body {
 /*Blocks*/
 /*first-screen*/
 .first-screen {
+    color: var(--white);
     position: relative;
     height: 100vh;
     background: url("/loading_page/images/fs_bg.jpg") center /cover;
@@ -110,4 +112,171 @@ body {
     font-size: 24px;
     line-height: 48px;
     font-weight: 500;
+}
+
+/* Search Block*/
+.search {
+    position: relative;
+    z-index: 0;
+    margin-top: calc(var(--margin)*-24);
+    padding-bottom: calc(var(--margin)*8);
+}
+.search__tabs {
+    background-color: var(--white);
+    display: inline-flex;
+    padding: 10px 10px 24px 10px;
+    border-radius: 25px 25px 0 0;
+}
+.search__tab {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 18px 20px;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 0;
+}
+.search__tab:first-child {
+    margin-right: calc(var(--margin)*2);
+}
+.search__tab:not(.search__tab_active){
+    cursor: pointer;
+}
+.search__tab_active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2;
+    background-color: var(--primary);
+}
+.search__tab-img {
+    height: 25px;
+    width: 25px;
+    margin-right: 4px;
+}
+.search__tab-img--1 {
+    background: url('./images/Airplane-Mode-On1.svg') center / cover;
+    transform: rotate(-45deg);
+}
+.search__tab-img--2 {
+    background: url('./images/Hotel-Star.svg') center / cover;
+}
+.search__filrets {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--white);
+    padding: 48px 60px;
+    border-radius: 0 50px 50px 50px;
+}
+.search__filrets > *:not(:last-child) {
+    margin-right: calc(var(--margin)*3);
+}
+.seafch__buttom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: 154px;
+    min-height: 154px;
+    border-radius: 75px;
+    overflow: hidden;
+    z-index: 0;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+.seafch__buttom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    opacity: 0.8;
+    z-index: -1;
+}
+.seafch__buttom > div {
+    content: '';
+    width: 75px;
+    height: 75px;
+    background: url('./images/icons8-поиск-128.svg') center / cover;
+}
+
+/* Filter blck */
+.filter {
+    display: inline-flex;
+    justify-content:space-between;
+    position: relative;
+    padding: 44px 22px;
+}
+.filter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.4;
+    border: 2px solid var(--secondary);
+    border-radius: 25px;
+}
+.filter > *:not(:last-child){
+    margin-right: calc(var(--margin)*5);
+}
+.filter__item {
+    font-weight: 500;
+}
+.filter__name {
+    font-size: 17px;
+    opacity: 0.5;
+    color: var(--black);
+    margin-bottom: calc(var(--margin)*1.5);
+}
+.filter__value {
+    font-size: 24px;
+}
+.filter__icon {
+    --filter_icon_size: 40px;
+    position: relative;
+    padding: 5px;
+    min-width: var(--filter_icon_size);
+    height: var(--filter_icon_size);
+    background: url('./images/Airplane-Mode-Ongrey.svg') center no-repeat;
+}
+.filter__icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--filter_icon_size);
+    border: 1px dashed var(--black);    
+    opacity: 0.3;
+}
+.filter__date .filter__name {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+}
+.filter__date .filter__name span {
+    opacity: 0.5;
+}
+.filter__name-icon {
+    width: 25px;
+    height: 25px;
+    margin-left: calc(var(--margin)*1.5);
+    background: url('./images/Airplane-Mode-On1.svg') center / cover;
+}
+.filter__name-icon--return {
+    transform: rotate(180deg);
+}
+.filter__date .filter__icon {
+    background: url('./images/Planner.svg') center no-repeat;
 }
