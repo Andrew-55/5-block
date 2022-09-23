@@ -7,7 +7,7 @@
     --black: #000;
     --primary: #3E86F5;
     --secondary: #7C7C7C;
-    --bg_color: #E5E5E5;
+    --bg_color: #F3F3F3;
 }
 
 * {
@@ -27,7 +27,7 @@ body {
 }
 .container {
     margin: auto;
-    max-width: 1180px;
+    max-width: 1230px;
     padding: 0 calc(var(--margin)*2);
     height: 100%;
 }
@@ -158,11 +158,11 @@ body {
     width: 25px;
     margin-right: 4px;
 }
-.search__tab-img--1 {
+.search__tab-img_1 {
     background: url('./images/Airplane-Mode-On1.svg') center / cover;
     transform: rotate(-45deg);
 }
-.search__tab-img--2 {
+.search__tab-img_2 {
     background: url('./images/Hotel-Star.svg') center / cover;
 }
 .search__filrets {
@@ -281,8 +281,21 @@ body {
 }
 
 /* special block */
+.special-block {
+    padding: 160px 0;
+}
 .special-block .tabs {
     margin-bottom: calc(var(--margin)*8);
+}
+.special-block__cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin: calc(var(--margin)*-1.25);
+}
+.special-block__cards .card {
+    margin: calc(var(--margin)*1.25);
 }
 
 /* --> Elements <-- */
@@ -351,7 +364,7 @@ body {
     margin-left: calc(var(--margin)*1.5);
     background: url('./images/Airplane-Mode-On1.svg') center / cover;
 }
-.filter__name-icon--return {
+.filter__name-icon_return {
     transform: rotate(180deg);
 }
 .filter__date .filter__icon {
@@ -399,4 +412,87 @@ body {
     cursor: default;
     background-color: var(--primary);
     color: var(--white);
+}
+
+/* Card */
+.card {
+    display: inline-block;
+    border-radius: 50px;
+    background-color: var(--white);
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding: 22px 28px 24px;
+}
+.cadr__top {
+    display: flex;
+    margin-bottom: calc(var(--margin)*2.5);
+}
+.card__photo {
+    border-radius: 50px;
+}
+.card__date {
+    --font_size: 18px;
+    margin-left: calc(20px + var(--font_size)/2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.5em;
+    color: var(--secondary);
+}
+.card__date > span {
+    transform: rotate(90deg);
+}
+.card__bottom {
+}
+.card__params {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+}
+.card__badge {
+    background-color: #FCDDEC;
+    color: #F178B6;
+    border-radius: 1em;
+    padding: calc(var(--margin)/2) calc(var(--margin)*2);
+}
+.card__duration {
+    margin-left: calc(var(--margin)*1.5);
+    color: var(--secondary);
+}
+.card__title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 600;
+    margin: calc(var(--margin)*1.5) 0;
+}
+.card__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card__price {
+    display: flex;
+    align-items: flex-end;
+    font-size: 24px;
+    font-weight: 500;
+}
+.card__price > span {
+    font-size: 18px;
+    color: var(--secondary);
+}
+.card__button {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3E86F5;
+    background-color: #F2F6FF;
+    padding: calc(var(--margin)*2) calc(var(--margin)*2.5);
+    border-radius: 10px;
 }
