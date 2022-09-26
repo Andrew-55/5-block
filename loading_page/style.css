@@ -42,7 +42,7 @@ body {
     color: var(--white);
     position: relative;
     height: 100vh;
-    background: url("/loading_page/images/fs_bg.jpg") center /cover;
+    background: url("./images/fs_bg.jpg") center /cover;
 }
 .first-screen::before {
     content: "";
@@ -365,6 +365,24 @@ body {
     box-shadow: 4px 8px 25px rgba(62, 134, 245, 0.25);
 }
 
+/* Destination Block */
+.destination-block {
+    padding: 120px 0;
+}
+.destination-block .title {
+    margin-bottom: calc(var(--margin)*4);
+}
+.destination-block__cards {
+    margin: calc(var(--margin)*-1.25);
+    margin-top: calc(var(--margin)*10);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.destination-block__cards > .card {
+    margin: calc(var(--margin)*1.25);
+}
+
 /* --> Elements <-- */
 .filter {
     display: inline-flex;
@@ -454,6 +472,14 @@ body {
     display: flex;
     justify-content: center;
 }
+.tabs_opacity .tabs__content {
+    background-color: transparent;
+    box-shadow: none;
+}
+.tabs_opacity .tabs__item_active,.tabs_opacity .tabs__item_active:hover {
+    background-color: var(--white);
+    color: var(--primary);
+}
 .tabs__content {
     display: flex;
     padding: var(--margin);
@@ -490,7 +516,51 @@ body {
     overflow: hidden;
     padding: 22px 28px 24px;
 }
+.card_destination {
+    max-width: 280px;
+    box-sizing: border-box;
+    padding: calc(var(--margin)*1.25);
+    border-radius: 25px;
+}
+.card_destination .card__photo {
+    border-radius: 25px;
+    width: 100%;
+}
+.card_destination .card__title {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: var(--margin);
+}
+.card_destination .card__bottom {
+    padding: 0 calc(var(--margin)*3);
+}
+.card_destination .cadr__top {
+    margin-bottom: calc(var(--margin)*2);
+}
+.card_destination .card__rating {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+.card_destination .card__address {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.card_destination .card__address-icon {
+    width: calc(var(--margin)*2);
+    height: calc(var(--margin)*2);
+    background: url('./images/Location.svg') center / cover;
+
+}
+.card_destination .card__address > span {
+    color: var(--margin);
+    opacity: 0.5;
+}
 .cadr__top {
+    position: relative;
     display: flex;
     margin-bottom: calc(var(--margin)*2.5);
 }
@@ -527,6 +597,11 @@ body {
     border-radius: 1em;
     padding: calc(var(--margin)/2) calc(var(--margin)*2);
 }
+.card__badge_adventure {
+    color: #7879F1;
+    background-color: #F1F1FD;
+
+}
 .card__duration {
     margin-left: calc(var(--margin)*1.5);
     color: var(--secondary);
@@ -560,4 +635,20 @@ body {
     background-color: #F2F6FF;
     padding: calc(var(--margin)*2) calc(var(--margin)*2.5);
     border-radius: 10px;
+}
+
+/* Rating */
+.rating {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    padding: calc(var(--margin)/4) calc(var(--margin)*1.25);
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.rating__img {
+    width: calc(var(--margin)*2);
+    height: calc(var(--margin)*2);
+    background: url('./images/Star.svg') center / cover;
 }
