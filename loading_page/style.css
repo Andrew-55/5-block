@@ -383,6 +383,54 @@ body {
     margin: calc(var(--margin)*1.25);
 }
 
+/* Review Block */
+.reviews-block {
+    padding: 210px 0 56px;
+}
+.reviews-block__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: calc(var(--margin)*-1.25);
+}
+.reviews-block__cards > .review {
+    flex-grow: 1;
+    box-sizing: border-box;
+    margin: calc(var(--margin)*1.25);
+}
+.reviews-block__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--margin)*4);
+   
+}
+.reviews-block__prev, .reviews-block__next {
+    --arrow_size: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--arrow_size);
+    height: var(--arrow_size);
+    border-radius: 15px;
+    border: 2px solid rgba(62, 134, 245, 0.5);
+}
+.reviews-block__prev {
+    transform: rotate(-180deg);
+    margin-right: 20px;
+}
+.reviews-block__prev > div,
+.reviews-block__next > div {
+    position: relative;
+    left: -5px;
+    width: calc(var(--arrow_size)/2.5);
+    height: calc(var(--arrow_size)/2.5);
+    border: 3px solid transparent;
+    border-top-color: var(--primary);
+    border-right-color: var(--primary);
+    transform: rotate(45deg);
+}
+
 /* --> Elements <-- */
 .filter {
     display: inline-flex;
@@ -642,7 +690,7 @@ body {
     display: flex;
     align-items: center;
     background-color: var(--white);
-    padding: calc(var(--margin)/4) calc(var(--margin)*1.25);
+    padding: calc(var(--margin)/4) var(--margin);
     border-radius: 25px;
     font-size: 12px;
     font-weight: 500;
@@ -651,4 +699,64 @@ body {
     width: calc(var(--margin)*2);
     height: calc(var(--margin)*2);
     background: url('./images/Star.svg') center / cover;
+}
+
+/* Review */
+.review {
+    width: 580px;
+    
+}
+.review__content {
+    --offset: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: calc(var(--margin)*10) calc(var(--margin)*4);
+    padding-bottom: 0;
+    background-color: var(--white);
+    border-radius: 50px;
+    margin-bottom: var(--offset);
+}
+.review__content > * {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: calc(var(--margin)/1.5);
+}
+.review__qoute {
+    position: absolute;
+    top: calc(var(--margin)*4);
+    width: 130px;
+    height: 100px;
+    background: url('./images/quote2_black.svg') center / cover;
+}
+.review__text {
+}
+.review__name {
+    color: var(--primary);
+    text-decoration: none;
+}
+.review__nickname {
+    position: relative;
+    z-index: 1;
+    color: var(--black);
+    opacity: 0.5;
+    margin-bottom: calc(var(--margin)*-9);
+}
+.review__avatar {
+    position: relative;
+    top: var(--offset);
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: 0px;
+    padding: 24px 25px 10px;
+    border-radius: 100px;
+    background-color: var(--white);
+}
+.review__raring {
+    position: absolute;
+    top: calc(var(--margin)*4);
+    right: var(--margin);
 }
