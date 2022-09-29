@@ -535,6 +535,24 @@ body {
 }
 
 /* --> Elements <-- */
+
+/* Button */
+.button {
+    cursor: pointer;
+    display: inline-block;
+    color: var(--white);
+    font-size: 20px;
+    padding: 28px 34px;
+    background-color: var(--primary);
+    border-radius: 10px;
+    box-shadow: 4px 8px 25px rgba(62, 134, 245, 0.25);
+}
+.button_light {
+    box-shadow: none;
+    color: var(--primary);
+    background-color: var(--white);
+}
+
 .filter {
     display: inline-flex;
     justify-content: space-between;
@@ -897,11 +915,7 @@ body {
     opacity: 0.5;
     margin-bottom: calc(var(--margin)*-9);
 }
---arrow_size
-:root {
-    --blocks_padding: 2vw 0;
-    --card_size: 38vw;
-}
+
 @media screen and (max-width: 1200px) {
     :root {
         --blocks_padding: 6vw 0;
@@ -998,7 +1012,6 @@ body {
         --blocks_padding: 3vw 0;
         --card_size: 32vw;
     }
-    --arrow_size
     .search {
         margin-top: 0;
     }
