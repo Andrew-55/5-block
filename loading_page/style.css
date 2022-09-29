@@ -867,7 +867,7 @@ body {
     height: calc(var(--margin)*2);
     background: url('./images/Star.svg') center / cover;
 }
---arrow_size
+
 /* Review */
 .review {
     width: 580px;
@@ -915,7 +915,40 @@ body {
     opacity: 0.5;
     margin-bottom: calc(var(--margin)*-9);
 }
+.review__avatar {
+    position: relative;
+    top: var(--offset);
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: 0px;
+    padding: 24px 25px 10px;
+    border-radius: 100px;
+    background-color: var(--white);
+}
+.review__raring {
+    position: absolute;
+    top: calc(var(--margin)*4);
+    right: var(--margin);
+}
 
+
+/* Big desktop */
+@media screen and (max-width: 1420px) {
+    .about-block>.container {
+        flex-direction: column;
+    }
+    .statistic {
+        margin-bottom: calc(var(--margin)*8);
+        margin-right: 0;
+    }
+    .description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/* Desktop */
 @media screen and (max-width: 1200px) {
     :root {
         --blocks_padding: 6vw 0;
@@ -995,13 +1028,30 @@ body {
     .special-block {
         padding: var(--blocks_padding);
     }
+    .description__text>p {
+        font-size: 2vw;
+        line-height: 2em;
+    }
 
+    /* Distination block */
+    .destination-block {
+        padding: var(--blocks_padding)
+    }
+    .destination-block__cards {
+        margin-top: 0;
+    }
+    .destination-block .tabs {
+        padding-bottom: 4vw;
+    }
     /* Elements */
     .title {
         margin-bottom: 3vw;
     }
     .tabs__item {
         font-size: 2.4vw;
+    }
+    .about-block {
+        padding: var(--blocks_padding);  
     }
 }
 
@@ -1058,6 +1108,9 @@ body {
         margin: calc(var(--card_size)/32);
     }
 
+    /* Distination Block */
+   
+
     /* Elements */
     .title {
         font-size: 4.2vw;
@@ -1100,12 +1153,36 @@ body {
         border-radius: 0.8em;
     }
 
+    .card_destination {
+        padding: calc(var(--card_size)/30);
+        border-radius: calc(var(--card_size)/10);
+    }
+    .card_destination .card__photo {
+        border-radius: 0;
+    }
+    .card_destination .card__rating {
+        top: 6%;
+        right: 5%;
+    }
+    .card_destination .card__title {
+        font-size: calc(var(--card_size)/13);
+        line-height: 1.4em;
+        margin-bottom: calc(var(--card_size)/100);
+    }
+    .card_destination .card__address {
+        font-size: calc(var(--card_size)/22);
+    }
+    .card_destination .card__address-icon {
+        width: calc(var(--card_size)/18);
+        height: calc(var(--card_size)/18);
+    }
 }
 /* Tablet */
 @media screen and (max-width: 768px) {
     :root {
-        --blocks_padding: 2vw 0;
+        --blocks_padding: 4vw 0;
         --card_size: 38vw;
+        --about_img_size: 63vw;
     }
     .header {
         flex-direction: column;
@@ -1125,16 +1202,47 @@ body {
         margin-right: 4vw;
     }
 
+    /* About block */
+    .statistic {
+        width: calc(var(--about_img_size));
+        height: calc(var(--about_img_size)*1.67);
+
+    }
+    .statictic__img {
+        width: 100%;
+        border-radius: calc(var(--about_img_size)/6.4);
+    }
+   .statistic__badge {
+        left: -18%;
+        width: calc(var(--about_img_size)/2.9);
+        height: calc(var(--about_img_size)/4);
+        border-radius: calc(var(--about_img_size)/13.3);
+        font-size: calc(var(--about_img_size)/27);
+        line-height: 1.8em;
+    }
+    .statistic__badge_2, .statistic__badge_3 {
+        left: initial;
+        right: -23%;
+    }
+    .statistic__badge > strong {
+        font-size: calc(var(--about_img_size)/13.5);
+    }
     /* Elements */
     .title {
         margin-bottom: 2vw;
         font-size: 4.5vw;
+    }
+    .button {
+        font-size: 2.6vw;
+        border-radius: 0.5em;
+        padding: 1.6em 1.8em;
     }
 }
 
 /* Phone */
 @media screen and (max-width: 576px) {
     :root {
+        --blocks_padding: 3vw 0;
         --card_size: 40vw;
     }
     .header {
@@ -1183,6 +1291,14 @@ body {
         width: 100%;
     }
 
+    /* About block */
+    .statistic {
+        margin-bottom: calc(var(--margin)*5);
+    }
+    .description__text > p {
+        margin-bottom: calc(var(--margin)*2);
+    }
+
     /* Elements */
     .tabs__item {
         font-size: 3vw;
@@ -1193,7 +1309,7 @@ body {
 @media screen and (max-width: 480px) {
     :root {
         --margin: 4px;
-        --blocks_padding: 2vw 0;
+        --blocks_padding: 4vw 0;
         --card_size: 48vw;
     }
     .first-screen {
@@ -1217,6 +1333,12 @@ body {
          border-width: 1px;
          border-radius: 5vw;
      }
+    
+    /* About block */
+    .description__text>p {
+        font-size: 2.6vw;
+    }
+
      .tabs__content {
         padding: 0;
     }
