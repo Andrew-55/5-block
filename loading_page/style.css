@@ -1076,6 +1076,14 @@ body {
         right: 4%;
     }
 
+    /* Discount block */
+    .discount-block {
+        padding: var(--blocks_padding);
+    }
+    .footer {
+        padding: 10vw 0 6vw;
+    }
+
     /* Elements */
     .title {
         margin-bottom: 3vw;
@@ -1146,6 +1154,19 @@ body {
     .review__raring {
         top: 22%;
         right: -10%;
+    }
+    /* Footer */
+    .footer {
+        font-size: 2vw;
+    }
+    .footer__menu {
+        width: 40%;
+    }
+    .footer__copyright {
+        font-size: 1em;
+    }
+    .footer__menu-item {
+        font-size: 1.2em;
     }
     /* Elements */
     .title {
@@ -1220,6 +1241,7 @@ body {
         --card_size: 38vw;
         --about_img_size: 63vw;
         --review_size: 2.4vw;
+        --discount_size: 10vw;
     }
     .header {
         flex-direction: column;
@@ -1279,6 +1301,17 @@ body {
         top: 22%;
         right: -28%;
     }
+
+    /* Discount block */
+    .discount-block__content {
+        padding: calc(var(--discount_size)*0.9) calc(var(--discount_size)*1.1);
+        border-radius: calc(var(--discount_size)*0.8);
+    }
+    .discount-block .button {
+        border-radius: calc(var(--discount_size)*0.2);;
+    }
+
+
     /* Elements */
     .title {
         margin-bottom: 2vw;
@@ -1411,6 +1444,11 @@ body {
     .review__avatar {
         margin-top: calc(var(--offset)/2);
     }
+    /* Footer */
+    .footer {
+        font-size: 2.4vw;
+    }
+
 
      .tabs__content {
         padding: 0;
