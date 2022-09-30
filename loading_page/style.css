@@ -433,7 +433,6 @@ body {
 
 .reviews-block__cards {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     margin: calc(var(--margin)*-1.25);
 }
@@ -460,7 +459,7 @@ body {
     align-items: center;
     width: var(--arrow_size);
     height: var(--arrow_size);
-    border-radius: 15px;
+    border-radius: calc(var(--arrow_size)/2.8);
     border: 2px solid rgba(62, 134, 245, 0.5);
 }
 
@@ -952,6 +951,8 @@ body {
 @media screen and (max-width: 1200px) {
     :root {
         --blocks_padding: 6vw 0;
+        --review_size: 1.8vw;
+        
     }
     .first-screen_content {
         justify-content: flex-start;
@@ -1043,6 +1044,38 @@ body {
     .destination-block .tabs {
         padding-bottom: 4vw;
     }
+
+    /* Reviews Block */
+    .reviews-block {
+        padding: var(--blocks_padding)
+    }
+    .review__content {
+        --offset: calc(var(--review_size)*2.6);
+        padding: calc(var(--review_size)*4) calc(var(--review_size));
+        padding-bottom: 0;
+        border-radius: calc(var(--review_size)*3);
+    }
+    .review__content>* {
+        font-size: var(--review_size);
+        line-height: 2.1em;
+    }
+    .review__qoute {
+        width: calc(var(--review_size)*6);
+        height: calc(var(--review_size)*5);
+    }
+    .review__avatar {
+        margin-top: calc(var(--offset)/5);
+        padding: calc(var(--review_size)*1.4) calc(var(--review_size)*1.5) calc(var(--review_size)/2);
+        line-height: 0;
+    }
+    .review__avatar img {
+        width: calc(var(--review_size)*4.6);
+    }
+    .review__raring {
+        top: 24%;
+        right: 4%;
+    }
+
     /* Elements */
     .title {
         margin-bottom: 3vw;
@@ -1108,9 +1141,12 @@ body {
         margin: calc(var(--card_size)/32);
     }
 
-    /* Distination Block */
-   
 
+    /* Reviews Block */
+    .review__raring {
+        top: 22%;
+        right: -10%;
+    }
     /* Elements */
     .title {
         font-size: 4.2vw;
@@ -1183,6 +1219,7 @@ body {
         --blocks_padding: 4vw 0;
         --card_size: 38vw;
         --about_img_size: 63vw;
+        --review_size: 2.4vw;
     }
     .header {
         flex-direction: column;
@@ -1226,6 +1263,21 @@ body {
     }
     .statistic__badge > strong {
         font-size: calc(var(--about_img_size)/13.5);
+    }
+     /* Reviews Block */
+    .review__content {
+        padding-top: calc(var(--review_size)*2);
+        border-radius: calc(var(--review_size)*2);
+    }
+    .reviews-block__cards {
+        flex-direction: column;
+    }
+    .reviews-block__cards>.review {
+        width: initial;
+    }
+    .review__raring {
+        top: 22%;
+        right: -28%;
     }
     /* Elements */
     .title {
@@ -1298,6 +1350,20 @@ body {
     .description__text > p {
         margin-bottom: calc(var(--margin)*2);
     }
+    /* Reviews Block */
+    .review__avatar {
+        margin-top: calc(var(--offset)/2);
+    }
+    .review__raring {
+    top: 22%;
+    right: -34%;
+    }
+    .reviews-block__prev, .reviews-block__next {
+        --arrow_size: 30px;
+    }
+    .reviews-block__prev {
+        margin-right: 10px;
+    }
 
     /* Elements */
     .tabs__item {
@@ -1337,6 +1403,13 @@ body {
     /* About block */
     .description__text>p {
         font-size: 2.6vw;
+    }
+    /* Reviews Block */
+    .review__content>* {
+        font-size: calc(var(--review_size)*1.2);
+    }
+    .review__avatar {
+        margin-top: calc(var(--offset)/2);
     }
 
      .tabs__content {
